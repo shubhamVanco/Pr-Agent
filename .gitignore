@@ -1,0 +1,91 @@
+# ==========================================
+# Git Ignore Configuration
+# ==========================================
+
+# Markdown & Documentation files
+*.md
+**/*.md
+
+# Tests & Test suites
+tests/
+**/tests/
+test/
+**/test/
+test_*.py
+*_test.py
+*.test.*
+
+# Environment variables & Secrets
+.env
+.env.*
+!.env.example
+*.secrets.toml
+pr_agent/settings/.secrets.toml
+pr_agent/settings_prod/.secrets.toml
+*.pem
+*.key
+
+# Python bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Packaging & Distributions
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+skpro/
+
+# Testing & Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+
+# Logs
+*.log
+logs/
+.log
+
+# IDEs & Editor configurations
+.idea/
+.vscode/
+.lsp/
+*.sublime-project
+*.sublime-workspace
+.qodo/
+
+# Lock files (if unwanted)
+poetry.lock
+
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Documentation build caches
+docs/.cache/
+docs/site/
+site/
+
+# Temporary & Backup files
+*.tmp
+*.bak
+*.swp
+*~

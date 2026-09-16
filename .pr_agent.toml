@@ -1,0 +1,20 @@
+[config]
+# Disable auto approval for safety during initial rollout
+enable_auto_approval = false
+# Skip non-code files
+patch_extension_skip_types = [".md", ".txt", ".csv", ".json", ".lock"]
+
+[pr_reviewer]
+# Limit noise by reducing max findings
+num_max_findings = 3
+# Add org-specific context
+extra_instructions = "Please ignore automatically generated migration files. Focus heavily on security issues and performance regressions."
+
+[pr_code_suggestions]
+# Keep suggestions targeted and low volume
+num_code_suggestions_per_chunk = 2
+focus_only_on_problems = true
+
+[github_app]
+# What runs automatically when a PR is opened
+handle_pr_actions = ['opened', 'ready_for_review']

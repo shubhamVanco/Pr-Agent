@@ -1,0 +1,25 @@
+name: PR-Agent Review
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  pr_agent_job:
+    if: ${{ github.event.sender.type != 'Bot' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+    name: Run PR-Agent
+    steps:
+      - id: pr-agent
+        uses: Codium-ai/pr-agent@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # For Phase 4: Put your real Groq/Mistral/OpenAI API key in your repo secrets!
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          # MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
