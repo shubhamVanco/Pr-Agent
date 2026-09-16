@@ -6,14 +6,7 @@
 *.md
 **/*.md
 
-# Tests & Test suites
-tests/
-**/tests/
-test/
-**/test/
-test_*.py
-*_test.py
-*.test.*
+
 
 # Environment variables & Secrets
 .env
