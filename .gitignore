@@ -2,9 +2,9 @@
 # Git Ignore Configuration
 # ==========================================
 
-# Markdown & Documentation files
-*.md
-**/*.md
+# Local notes
+PR-AGENT-SETUP-INSTRUCTIONS.md
+**/PR-AGENT-SETUP-INSTRUCTIONS.md
 
 
 

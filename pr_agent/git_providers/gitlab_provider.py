@@ -1254,7 +1254,7 @@ class GitLabProvider(GitProvider):
                     get_logger().warning(f"Skipping suggestion: file '{relevant_file}' not found in diff")
                     continue
                 
-                if target_file.patch:
+                if getattr(target_file, 'patch', None):
                     try:
                         from unidiff import PatchSet
                         patch_set = PatchSet(target_file.patch)
